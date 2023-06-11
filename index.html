@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeLab!</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="recursos/CVL.svg" />
+</head>
+<body>
+
+    <header class="head">
+        <div class="container">
+            <p class="logo"><span class="sombra">Code</span><span class="color">Lab!</span></p>
+        </div>
+        <div id="lang-menu" class="lang-menu">
+            <div class="idioma">
+                <div id="selected-lang">Idioma</div>
+            </div>
+            
+            <ul>
+                <li>
+                    <div class="idioma" data-language="es">
+                        <a id="idioma-es" href="#" class="es" >Español</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="idioma" data-language="en">
+                        <a id="idioma-en" href="#" class="en">English</a>
+                    </div>
+                </li><li>
+                    <div class="idioma" data-language="de">
+                        <a id="idioma-de" href="#" class="de" >German</a>
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="idioma" data-language="fr">
+                        <a id="idioma-fr" href="#" class="fr">French</a>
+                    </div>
+                </li>
+            </ul>
+            
+        </div>
+        <input type="checkbox" id="dark-mode-toggle" class="dark-mode-toggle" onclick="toggleDarkMode()">
+        <label for="dark-mode-toggle" class="dark-mode-label">
+            <span class="toggle-icon">
+                <i class="fas fa-sun"></i>
+                <i class="fas fa-moon"></i>
+            </span>
+        </label>
+        <div id="wpp">
+            <a href="https://api.whatsapp.com/send?phone=998809199" class="btn-wpp" target="blank"><i class="fa-brands fa-whatsapp fa-2xl" style="color: #ffffff;"></i></a>
+        </div>
+        </div>
+        
+    </header>
+    
+    <section id="principal">
+        <h1><span data-section="principal" data-value="slogan1">¡Abre las puertas al mundo digital</span><br><span data-section="principal" data-value="slogan2">con Code</span><span class="color">Lab!</span></h1>
+
+    </section>
+
+    <section id="beneficios">
+        <div class="container">
+            <div class="img-container"></div>
+            <div class="texto">
+                <ul>
+                    <li data-section="beneficios" data-value="b1">✔️ Aprendizaje práctico a través de proyectos reales</li><br>
+                    <li data-section="beneficios" data-value="b2">✔️ Flexibilidad en los cursos para adaptarse a las necesidades de los estudiantes</li><br>
+                    <li data-section="beneficios" data-value="b3">✔️ Herramientas de última generación para aprender y experimentar con tecnologías avanzadas</li><br>
+                    <li data-section="beneficios" data-value="b4">✔️ Comunidad en línea de programadores que brindan apoyo y comparten conocimientos</li><br>
+                    <li data-section="beneficios" data-value="b5">✔️ Oportunidades laborales a través de la conexión con empresas de tecnología</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <section id="caracteristicas">
+        <div class="container">
+            <div class="carta">
+                <h3 data-section="c1" data-value="nombre">Mentoría</h3>
+                <div class="texto">
+                    <p data-section="c1" data-value="descripcion">CodeLab cuenta con un programa de mentoría que brinda a los estudiantes la oportunidad de conectarse con mentores experimentados en la industria de la tecnología.</p>
+                </div>
+            </div>
+            <div class="carta">
+                <h3 data-section="c2" data-value="nombre">Apoyo integral</h3>
+                <div class="texto">
+                    <p data-section="c2" data-value="descripcion">CodeLab brinda a los estudiantes apoyo integral, lo que significa que no solo reciben atención y orientación en su aprendizaje, sino que también tienen acceso a recursos para ayudarlos en su carrera profesional.</p>
+                </div>
+            </div>
+            <div class="carta">
+                <h3 data-section="c3" data-value="nombre">Certificación <br>reconocida</h3>
+                <div class="texto">
+                    <p data-section="c3" data-value="descripcion">CodeLab ofrece certificaciones reconocidas en la industria de la tecnología, lo que permite a los estudiantes demostrar sus habilidades a empleadores potenciales y avanzar en sus carreras.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="testimonios">
+        <div class="container">
+            <div class="test">
+                <div class="info-test">
+                    <img src="recursos/comilla.svg" alt="COMILLA">
+                    <p data-section="t1" data-value="test">"CodeLab me ha brindado una educación de alta calidad en el campo de la tecnología. Los instructores son extremadamente profesionales y las herramientas de aprendizaje son excepcionales."</p>
+                </div>
+                <div class="perfil">
+                    <img src="recursos/rostro1.jpg" alt="ROSTRO 1">
+                    <h4 data-section="t1" data-value="persona">Juan Muñoz</h4>
+                </div>
+            </div>
+            <div class="test">
+                <div class="info-test">
+                    <img src="recursos/comilla.svg" alt="COMILLA">
+                    <p data-section="t2" data-value="test">"Me encanta la comunidad en línea de CodeLab. Es maravilloso poder conectarme con otros programadores y compartir conocimientos y experiencias. ¡Me siento motivado y emocionado por lo que está por venir gracias a CodeLab!"</p>
+                </div>
+                <div class="perfil">
+                    <img src="recursos/rostro2.jpg" alt="ROSTRO 1">
+                    <h4 data-section="t2" data-value="persona">Ana Perez</h4>
+                </div>
+            </div>
+            <div class="test">
+                <div class="info-test">
+                    <img src="recursos/comilla.svg" alt="COMILLA">
+                    <p data-section="t3" data-value="test">"Estoy muy impresionado con la atención al cliente de CodeLab. Siempre están dispuestos a ayudar y brindan un excelente soporte técnico. Me siento muy bien apoyado mientras continúo mi educación en CodeLab."</p>
+                </div>
+                <div class="perfil">
+                    <img src="recursos/rostro3.jpg" alt="ROSTRO 1">
+                    <h4 data-section="t3" data-value="persona">Marcos Gonzales</h4>
+                </div>
+            </div>
+            <div class="test">
+                <div class="info-test">
+                    <img src="recursos/comilla.svg" alt="COMILLA">
+                    <p data-section="t4" data-value="test">"Antes de unirme a CodeLab, tenía muy poca experiencia en programación. Ahora, después de completar varios cursos, siento que tengo las habilidades necesarias para trabajar en el campo de la tecnología."</p>
+                </div>
+                <div class="perfil">
+                    <img src="recursos/rostro4.jpg" alt="ROSTRO 1">
+                    <h4 data-section="t4" data-value="persona">Susana Flores</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="final">
+        <div class="container">
+            <div class="video-container">
+                <video controls src="recursos/CodeLab.mp4" type="video/mp4"></video>
+            </div>
+            <div class="formulario">
+                <form action="">
+                    <h4><span data-section="formulario" data-value="titulo">Únete a Code</span><span class="color">Lab!</span></h4>
+                    <input class="control" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre">
+                    <input class="control" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su Apellido">
+                    <input class="control" type="email" name="correo" id="correo" placeholder="Ingrese su E-mail">
+                    <input class="boton" id="boton" type="submit" value="Unirse">
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <nav class="social">
+                <a href="#"><i class="fa-brands fa-facebook fa-2xl" style="color: #50a150;"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram fa-2xl" style="color: #50a150;"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter fa-2xl" style="color: #50a150;"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube fa-2xl" style="color: #50a150;"></i></a>
+            </nav>
+            <small data-section="footer" data-value="texto">©2023. Todos los derechos reservados.</small>
+        </div>
+    </footer>
+
+    <script src="js/funciones.js"></script>
+
+</body>
+</html>

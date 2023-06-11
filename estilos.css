@@ -1,0 +1,704 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+h1{font-size: 3em;}
+h3{font-size: 1.25em;}
+p{font-size: 1.25em;}
+ul{list-style: none;}
+
+
+.color{
+    color: rgb(80, 161, 80);
+}
+
+body{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+.container{
+    max-width: 1600px;
+    margin: auto;
+}
+
+header{
+    background-color: rgb(245,245,245);
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+}
+
+header .logo{
+    margin: 0;
+    padding: 25px 30px;
+    font-weight: bold;
+    font-size: 1.5em ;
+}
+
+header .container{
+    display: flex;
+    flex-direction: column;
+    align-items : center;
+}
+
+
+.lang-menu {
+    width: 100px;
+    text-align: right;
+    font-weight: bold;
+    margin-top: 30px;
+    position: fixed;
+    left: 30px;
+    display: flex;
+}
+.lang-menu #selected-lang {
+    display: flex;
+    justify-content: space-between;
+    line-height: 2;
+    cursor: pointer;
+}
+.lang-menu #selected-lang:before {
+    content: '';
+    display:inline-block;
+    background-image: url(recursos/flecha_verde.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 5px;
+    margin-right: 5px;
+    width:20px;
+    height: 20px;
+    border-radius: 5px;
+}
+
+.lang-menu ul {
+    margin: 0;
+    padding: 0;
+    display: none;
+    background-color: #fff;
+    border: 0.5px solid #f8f8f8;
+    position: absolute;
+    top: 30px;
+    right:3px;
+    width: 110px;
+    border-radius: 5px;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
+}
+
+
+.lang-menu ul li {
+    list-style: none;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+}
+
+.lang-menu ul li a {
+    text-decoration: none;
+    width: 120px;
+    font-size: 15px;
+    color: black;
+    padding: 5px 10px;
+    display: block;
+}
+
+.lang-menu ul li:hover {
+    background-color: rgb(80, 161, 80);
+}
+
+ .lang-menu ul li a:before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    vertical-align: middle;
+    margin-right: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.es:before {
+    background-image: url(recursos/es.svg);
+}
+
+.en:before {
+    background-image: url(recursos/us.svg);
+}
+
+.de:before {
+    background-image: url(recursos/de.svg);
+}
+.fr:before {
+    background-image: url(recursos/fr.svg);
+}
+
+.lang-menu:hover ul {
+    display: block;
+}
+
+.btn-wpp{
+    position: fixed;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    bottom: 30px;
+    right: 30px;
+    background: rgb(80, 161, 80);
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.3);
+    z-index: 100;
+    display: none;
+    transition: transform 0.2s ease-in-out;
+}
+
+.btn-wpp:hover {
+    transform: scale(1.1);
+}
+
+.dark-mode-toggle {
+    display: none;
+  }
+
+  .dark-mode-label {
+    position: fixed;
+    top: 27px;
+    right: 20px;
+    width: 60px;
+    height: 34px;
+    background-color: #ccc;
+    border-radius: 17px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 4px;
+    transition: background-color 0.3s ease;
+  }
+
+  .toggle-icon {
+    position: relative;
+    width: 26px;
+    height: 26px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+  }
+
+  .toggle-icon i {
+    position: absolute;
+    transition: opacity 0.3s ease;
+  }
+
+  .dark-mode-toggle:checked + .dark-mode-label {
+    background-color: rgb(80, 161, 80);
+  }
+
+  .dark-mode-toggle:checked + .dark-mode-label .toggle-icon {
+    transform: translateX(25px);
+  }
+
+  .dark-mode-toggle:checked + .dark-mode-label .toggle-icon .fa-sun {
+    opacity: 0;
+  }
+
+  .dark-mode-toggle:checked + .dark-mode-label .toggle-icon .fa-moon {
+    opacity: 1;
+    color:black;
+  }
+
+  .dark-mode-toggle:not(:checked) + .dark-mode-label .toggle-icon .fa-sun {
+    opacity: 1;
+  }
+
+  .dark-mode-toggle:not(:checked) + .dark-mode-label .toggle-icon .fa-moon {
+    opacity: 0;
+  }
+
+.dark-mode {
+    .head{
+        background-color: rgb(20,20,20);
+        box-shadow: 0px 0px 7px rgb(80, 161, 80);
+    }
+    .lang-menu ul {
+        background-color: #1f1f1f;
+        border: 0px;
+        box-shadow: 0px 0px 3px #ffff;
+    }
+    .lang-menu ul li a {
+        color: #ffff;
+    }
+
+    #beneficios, #testimonios{
+        background-color: rgb(20,20,20);
+    }
+    color: #fff;
+    #caracteristicas, #final, footer{
+        background-color: #1f1f1f;
+    }
+    #testimonios .test{
+        box-shadow: 0px 0px 5px #ffff;
+        background-color: #1f1f1f;
+    }
+    #testimonios .info-test img{
+        filter: invert(50%);
+    }
+    #testimonios .info-test p{
+        color: #ffff;
+    }
+
+    #testimonios .perfil img{
+        box-shadow: 0px 0px 5px #ffff;
+    }
+
+    #testimonios .perfil h4{
+        color: #adadad;
+    }
+
+}
+
+
+#principal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    height: 64vh;
+    background-position: center center;
+    background-size: cover;
+    background-image: linear-gradient(
+        0deg,
+        rgba(2, 92, 17, 0.486),
+        rgba(0,0,0,0.5)
+    )
+    ,url("recursos/cerrar-hombre-escribiendo-codigo-computadora-portatil.jpg");
+    box-shadow:  0px 3px 5px black;
+}
+
+#beneficios .container{
+    padding: 100px 12px;
+}
+
+#beneficios .img-container{
+    background-image: linear-gradient(
+        0deg,
+        rgba(2, 92, 17, 0.486),
+        rgba(0,0,0,0.5)
+    )
+    ,url("recursos/principal2.jpg");
+    display: none;
+}
+
+#caracteristicas{
+    background-color: rgb(20,20,20);
+    color: white;
+    text-align: center;
+}
+
+#caracteristicas .container{
+    padding: 50px 15px;
+}
+
+#caracteristicas .carta{
+    background-position: center center;
+    background-size: cover;
+    padding : 50px 0px;
+    margin: 70px 40px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px rgb(80, 161, 80);
+}
+
+#caracteristicas p{
+    display: none;
+}
+
+.carta:first-child{
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.8),
+        rgba(0,0,0,0.8)
+    )
+    ,url("recursos/mentoria.png");
+}
+
+.carta:nth-child(2){
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.8),
+        rgba(0,0,0,0.8)
+    )
+    ,url("recursos/apoyo.png");
+}
+
+.carta:nth-child(3){
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.8),
+        rgba(0,0,0,0.8)
+    )
+    ,url("recursos/certificacion.png");
+}
+
+#testimonios{
+    background-color:white;
+
+}
+
+#testimonios .container{
+    padding: 50px 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#testimonios .test{
+    width: 90%;
+    margin:50px auto;
+    padding: 30px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    border-radius: 10px;
+}
+
+#testimonios .info-test, #testimonios .perfil{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#testimonios .info-test img{
+    width: 50px;
+    height: 50px;
+}
+
+#testimonios .info-test p{
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    color: #4b4b4b;
+}
+
+#testimonios .perfil{margin-top: 30px;}
+
+#testimonios .perfil img{
+    width: 90px;
+    height:90px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px black;
+
+}
+
+#testimonios .perfil h4{
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+    color: #131313;
+}
+
+#testimonios .perfil p{
+    margin: 0;
+    font-size: 16px;
+    margin-top: 5px;
+    color:#525252;
+}
+
+#final{
+    background-color: rgb(20,20,20);
+    color: white;
+}
+
+#final .container{
+    padding: 100px 25px;
+    padding-bottom: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+#final form{
+    text-align: center;
+    height: 350px;
+    width: 400px;
+    background-color: rgb(30,30,30);
+    border: 2px solid rgb(80, 161, 80);
+    box-shadow: 0px 0px 15px rgb(80, 161, 80);
+    border-radius: 15px;
+}
+
+#final h4{
+    margin-bottom: 30px;
+    font-size: 1.5em;
+}
+
+
+
+#final .control{
+    width: 300px;
+    padding:8px;
+    margin-bottom: 15px;
+    border: 2px solid rgb(80, 161, 80);
+    border-radius: 5px;
+}
+
+#final .boton{
+    height: 35px;
+    width: 300px;
+    color: white;
+    font-weight: bold;
+    border: 2px solid rgb(40, 95, 40);
+    background-color: rgb(80, 161, 80);
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+#final .boton:hover{
+    background-color: rgb(40, 95, 40);
+    border: 2px solid rgb(80, 161, 80);
+}
+
+#final .video-container{
+    display: none;
+}
+
+footer small{
+    margin: 0;
+    padding: 3px;
+    color: white;
+}
+
+footer{
+    background-color: rgb(20,20,20);
+}
+
+footer .container{
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+}
+
+footer .social{
+    padding-bottom: 50px;
+}
+
+footer a{
+    padding: 20px;
+}
+
+@media (min-width:768px) and (max-width:1280px) {
+
+    header{
+        position: fixed;
+        width: 100%;
+    }
+
+    .btn-wpp{
+        display: block;
+    }
+
+    #beneficios .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #beneficios .img-container{
+        display: block;
+        background-size: cover;
+        background-position: center center;
+        height: 500px;
+        width: 50%;
+        box-shadow: 0px 0px 5px black;
+    }
+
+    #beneficios .texto{
+        width: 50%;
+    }
+
+    #caracteristicas p{
+        display: block;
+        font-size: 15px;
+    }
+
+    #caracteristicas .texto{
+        margin:10px;
+    }
+
+    #caracteristicas .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #caracteristicas .carta{
+        padding: 0px;
+        margin: 5px;
+        width: 260px;
+        height: 360px;
+    }
+
+    .carta:first-child .texto{
+        padding-top: 5px;
+    }
+
+    .carta:nth-child(2) .texto{
+        padding-top: 5px;
+    }
+
+    #caracteristicas h3{
+        margin:20px;
+    }
+
+    .wrapper .carousel {
+        grid-auto-columns: calc((100% / 2) - 9px);
+    }
+
+    #testimonios .container{
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 50px 20px;
+    }
+
+    #testimonios .test{
+        width: 47%;
+        margin:50px auto;
+        padding: 30px;
+    }
+
+    #final .container{
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    #final .video-container{
+        display: block;
+        padding-bottom: 0px;
+        box-shadow: 0px 0px 8px rgb(80, 161, 80);
+        border-radius: 15px;
+        margin-right: 30px;
+        margin-left: 30px;
+        margin-bottom: 80px;
+    }
+
+    #final video{
+        max-width: 600px;
+        max-height: 600px;
+        border-radius: 15px;
+    }
+
+}
+
+@media (min-width: 1280px){
+
+    header{
+        position: fixed;
+        width: 100%;
+    }
+
+    .btn-wpp{
+        display: block;
+    }
+
+    #beneficios .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #beneficios .img-container{
+        display: block;
+        background-size: cover;
+        background-position: center center;
+        height: 500px;
+        width: 50%;
+        box-shadow: 0px 0px 5px black;
+    }
+
+    #beneficios .texto{
+        width: 50%;
+    }
+
+    #caracteristicas p{
+        display: block;
+        font-size: 15px;
+    }
+
+    #caracteristicas .texto{
+        margin:10px;
+    }
+
+    #caracteristicas .container{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    #caracteristicas .carta{
+        padding: 0px;
+        margin: 5px;
+        width: 260px;
+        height: 315px;
+    }
+
+    .carta:first-child .texto{
+        padding-top: 5px;
+    }
+
+    .carta:nth-child(2) .texto{
+        padding-top: 5px;
+    }
+
+    #caracteristicas h3{
+        margin:20px;
+    }
+
+    .wrapper .carousel {
+        grid-auto-columns: calc((100% / 3) - 12px)
+    }
+
+    #testimonios .container{
+        flex-direction: row;
+        padding: 50px 20px;
+    }
+
+    #testimonios .test{
+        width: 47%;
+        margin:15px;
+        padding: 30px;
+    }
+
+    #final .container{
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    #final .video-container{
+        display: block;
+        padding-bottom: 0px;
+        box-shadow: 0px 0px 8px rgb(80, 161, 80);
+        border-radius: 15px;
+        margin-right: 30px;
+        margin-left: 30px;
+        margin-bottom: 80px;
+    }
+
+    #final video{
+        max-width: 600px;
+        max-height: 600px;
+        border-radius: 15px;
+    }
+}
